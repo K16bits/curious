@@ -21,6 +21,7 @@ export const Textbox = styled.textarea`
 
 export const Button = styled.button`
     text-align:center;
+    align-content:center;
     margin-top:10px;
     border: 1px solid black; 
     width:83px;
@@ -28,12 +29,20 @@ export const Button = styled.button`
     padding:10px;
     background-color:#ffff;
     border-radius: 15px ;
+    font-size:15px;
 `;
 
 export const Button2 = styled(Button)`
-    background-color: rgb(222, 124, 0)
+    background-color: rgb(222, 124, 0);
+    color:#ffff;
 `;
 
 export const Title = styled.h1`
     font-size:26px;
+`;
+
+export const Subtext = styled.h3`
+    color: black;
+    font-size: 16px;
+    padding:10px;
 `;
