@@ -37,6 +37,15 @@ export const Button2 = styled(Button)`
     color:#ffff;
 `;
 
+export const Button3 = styled(Button)`
+    background-color: rgb(241, 241, 241);
+    border-radius:10px;
+    width:80%;
+    margin-bottom:15px;
+    margin-left:10%;
+    color:black;
+`;
+
 export const Title = styled.h1`
     font-size:26px;
 `;
