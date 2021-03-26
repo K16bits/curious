@@ -1,9 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import Header from '../../componets/header'
 import Main from '../../componets/main'
 import foto from '../../img/teste.jpg'
 
+
+import {ColumnInfo, Header,SubHeader} from '../../componets/header'
 import {Button, Button2, HeaderTop, Subtext, Textbox, Title} from '../../componets/auxComponetes'
 import { Card, SubCard } from '../../componets/card'
 
@@ -30,7 +31,21 @@ export default function Home(){
                 <Profile>
                         <img src={foto} alt="profile"></img>
                 </Profile>
-                <h1>{User.nome}</h1>
+                <TitleMain>{User.nome}</TitleMain>
+                <SubHeader>
+                    <ColumnInfo>
+                        <h5>10</h5>
+                        <h4>Seguidores</h4>
+                    </ColumnInfo>
+                    <ColumnInfo>
+                        <h5>5</h5>
+                        <h4>Answers</h4>
+                    </ColumnInfo>
+                    <ColumnInfo>
+                        <h5>5</h5>
+                        <h4>Seguindo</h4>
+                    </ColumnInfo>
+                </SubHeader>
             </Header>
             <Textbox placeholder="Pergunte algo"></Textbox>
             <Card>
@@ -61,8 +76,15 @@ export default function Home(){
 
 const Profile = styled.div`
     img{
+        border:3px solid white;
         width: 180px;
         height: 180px;
         border-radius: 50%;
     }
+`;
+
+const TitleMain = styled.div`
+    font-size:26px;
+    width:100%;
+    background-color:#ffff;
 `;
