@@ -9,7 +9,6 @@ export const Card = styled.div`
 `;
 
 export const SubCard = styled.div`
-    border:1px solid red;
     height: 44px;
     width:870;
     display:flex;
