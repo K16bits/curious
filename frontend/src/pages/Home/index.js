@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import api from '../../services/axios'
+
+
 import styled from 'styled-components'
 import Main from '../../componets/main'
 import foto from '../../img/teste.jpg'
 
 
 import {ColumnInfo, Header,SubHeader} from '../../componets/header'
-import {Button, Button2, HeaderTop, Subtext, Textbox, Title} from '../../componets/auxComponetes'
+import {Button, Button2,Button3, HeaderTop, Subtext, Textbox, Title} from '../../componets/auxComponetes'
 import { Card, SubCard } from '../../componets/card'
 
 export default function Home(){
@@ -14,10 +17,29 @@ export default function Home(){
         nome : "K16bits"
     }
 
-    const DataMessage = {
-        texto: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phellus gravida dictum consequat.Pellentesque dictum aliquet metus",
-        tempo: "dagorinha"
+    const [question,Setquestion] = useState('');
+
+    async function Handleform(e){
+        e.preventDefault();
+        console.log(question)
+        try{
+            await api.post("/storequestion",{"questions":question})
+        }catch(e){
+            console.log(e)
+        }
     }
+
+
+    const [dados,Setdados] = useState([])
+
+    async function getdata(){
+        const response = await api.get("/showquestion");
+        Setdados(response.data);
+    }
+
+    useEffect(()=>{
+        getdata()
+    },[])
 
     return(
         <>
@@ -47,27 +69,25 @@ export default function Home(){
                     </ColumnInfo>
                 </SubHeader>
             </Header>
-            <Textbox placeholder="Pergunte algo"></Textbox>
-            <Card>
-                <SubCard>
-                    <img src={foto} alt="profileMin"></img>
-                    <h3>{User.nome}</h3>
-                </SubCard>
-                    <Subtext> {DataMessage.texto}</Subtext>
-            </Card>
-            <Card>
-                <SubCard>
-                    <img src={foto} alt="profileMin"></img>
-                </SubCard>
-                    <Subtext> {DataMessage.texto}</Subtext>
-            </Card>
-            <Card>
-                <SubCard>
-                    <img src={foto} alt="profileMin"></img>
-                </SubCard>
-                    <Subtext> {DataMessage.texto}</Subtext>
-            </Card>
-            
+            <form onSubmit={Handleform}>
+                <Textbox placeholder="Pergunte algo"
+                value={question}
+                onChange={e => Setquestion(e.target.value)}
+                ></Textbox>
+                <Button3 type='submit' onChange={e => Setquestion(e.target.value)}
+                onSubmit={Handleform}
+                >Enviar</Button3>
+            </form>
+            {
+                dados.map(dado =>(
+                    <Card key={dado._id}>
+                        <SubCard>
+                            <img src={foto} alt="profileMin"></img>
+                        </SubCard>
+                            <Subtext> {dado.questions}</Subtext>
+                    </Card>
+                ))
+            }
         </Main>
         </>
     )
