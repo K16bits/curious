@@ -6,7 +6,7 @@ Projeto sendo desenvolvido para implementar algumas funcionalidades de CuriousCa
 - React
 - dotenv
 - Styled-components
-- Mongoose
+- Mongoose | NoSQL | mongoDB
 - nodemon
 - express
 - react-router-dom
