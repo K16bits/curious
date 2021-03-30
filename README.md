@@ -11,6 +11,7 @@ Projeto sendo desenvolvido para implementar algumas funcionalidades de CuriousCa
 - express
 - react-router-dom
 
+# Observação
 - Crie um arquivo .env na pasta backend e adicione"PORT= ?"      | troque '?' pela porta desejada!
 - Crie um arquivo .env na pasta frontend e adicione"PORTDATA= ?" | troque '?' pela a porta desejada!
 # Backend 
