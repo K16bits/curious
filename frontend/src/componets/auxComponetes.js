@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const HeaderTop = styled.div`
     height: 65px;
-    border:1px solid red;
     position:fixed;
     top:0px;
     width:100%;
