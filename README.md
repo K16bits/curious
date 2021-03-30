@@ -1,6 +1,16 @@
 # curious
 Projeto sendo desenvolvido para implementar algumas funcionalidades de CuriousCat a fim de melhorar minhas habilidades em React e Node.js
 
+# O que foi usado
+- Node
+- React
+- dotenv
+- Styled-components
+- Mongoose
+- nodemon
+- express
+- react-router-dom
+
 - Crie um arquivo .env na pasta backend e adicione"PORT= ?"      | troque '?' pela porta desejada!
 - Crie um arquivo .env na pasta frontend e adicione"PORTDATA= ?" | troque '?' pela a porta desejada!
 # Backend 
